@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Smart Home</title>
+    <!-- <link rel="stylesheet" href="./css/login-style.css" /> -->
+    <link rel="stylesheet" href="login-style.css" />
+    <!-- swiper slider -->
+    <!-- <link rel="stylesheet" href="./css/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="logo-sign-container">
+            <img class="logo" src="logo.png" alt="logo" />
+            <div class="sign-container">
+                <div class="sign">
+                    <p>Signin</p>
+                    <p>Signup</p>
+                </div>
+                <div class="swiper-container mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">signin1</div>
+                        <div class="swiper-slide">signup2</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <div class="login-title">
+            <h1>Welcome to <br /> Locator smart<br />home</h1>
+        </div>
+        <div class="login-forma">
+            <form action="">
+                <input id="username" type="text" name="username" placeholder="Username" />
+                <div class="password-container">
+                    <input id="password" type="password" placeholder="Password" />
+                    <input type="reset">
+                </div>
+                <button class="login" type="submit">Login</button>
+            </form>
+            <div class="about-container">
+                <div class="about">
+                    <div></div>
+                    <p>About</p>
+                </div>
+                <img class="login-image" src="login-img.png" alt="image" />
+            </div>
+        </div>
+        <div class="signin-form">
+            <form  action="">
+                <input id="newusername" type="text" name="username" placeholder="Username" />
+                <input id="email" type="email" name="email" placeholder="Email" />
+                <input id="phone" type="tel" name="phone" placeholder="phone  (+xxx) xx xxx xxx" />
+                <input id="newpassword" type="password" placeholder="Password" />
+                <button class="login" type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+    <div class="about-conent">
+        <div class="about-title">
+            <img class="about-back" src="back-btn.png" alt="back" />
+            <h3>About project</h3>
+        </div>
+        <div class="about-text">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium facilis, delectus harum commodi
+                optio
+                sequi mollitia aspernatur corporis repudiandae iusto a officiis tempora quibusdam eveniet sint
+                laboriosam
+                ipsum expedita nam. Ullam maxime eum quas magni qui iste earum aliquam. Velit perspiciatis nesciunt
+                consequatur laborum unde dolor maiores odio reprehenderit itaque!
+            </p>
+        </div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="swiper-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="jquery.min.js"></script>
+
+    <script>
+        $(".about").click(function () {
+            $(".login-container").css("display", "none");
+            $(".about-conent").css("display", "flex");
+            $(".about-back").click(function () {
+                $(".login-container").css("display", "flex");
+                $(".about-conent").css("display", "none");
+            });
+        });
+        // let el = $(".swiper-pagination span");
+        // console.log(el);
+        // let element = $(".");
+        // if()
+        /*swiper initalization*/
+        var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        let y = $(".swiper-slide");
+        $(".swiper-pagination-bullet").click(function () {
+            for (let j = 0; j < y.length; j++) {
+                if ($(y[0]).hasClass("swiper-slide-active")) {
+                    //alert(1)
+                    $(".login-forma").css("display", "none");
+                    $(".signin-form").css("display", "flex");
+                    
+                } else  if($(y[1]).hasClass("swiper-slide-active")){
+                    //alert(20)
+                    $(".login-forma").css("display", "flex");
+                    $(".signin-form").css("display", "none");
+
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
